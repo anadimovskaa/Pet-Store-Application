@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List of pets</title>
+</head>
+<body>
+<h1>Available Pets</h1>
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Birth Date</th>
+        <th>Price</th>
+    </tr>
+    <tr th:each="pet : ${pets}">
+        <td th:text="${pet.petName}">Pet Name</td>
+        <td th:text="${pet.petType}">Pet Type</td>
+        <td th:text="${pet.description}">Description</td>
+        <td th:text="${pet.petBirthDate}">Birth Date</td>
+        <td th:text="${pet.price}">Price</td>
+    </tr>
+</table>
+
+<form action="/pets/add" method="post">
+    <input type="text" name="petName" placeholder="Pet Name"/>
+    <input type="text" name="description" placeholder="Description"/>
+    <select name="petType">
+        <option value="DOG">Dog</option>
+        <option value="CAT">Cat</option>
+    </select>
+    <input type="date" name="petBirthDate"/>
+    <button type="submit">Add Pet</button>
+</form>
+
+</body>
+</html>

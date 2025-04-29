@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Add Pet</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+  <h1 class="my-4">Add a New Pet</h1>
+
+  <form th:action="@{/pets/add}" method="POST">
+    <!-- Pet Name -->
+    <div class="form-group">
+      <label for="petName">Pet Name</label>
+      <input type="text" class="form-control" id="petName" name="petName" required placeholder="Enter pet name">
+    </div>
+
+    <!-- Pet Type -->
+    <div class="form-group">
+      <label for="petType">Pet Type</label>
+      <select class="form-control" id="petType" name="petType" required>
+        <option value="DOG">Dog</option>
+        <option value="CAT">Cat</option>
+      </select>
+    </div>
+
+    <!-- Description -->
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea class="form-control" id="description" name="description" required placeholder="Enter pet description"></textarea>
+    </div>
+
+    <!-- Birth Date -->
+    <div class="form-group">
+      <label for="birthDate">Birth Date</label>
+      <input type="date" class="form-control" id="birthDate" name="birthDate" required>
+    </div>
+
+    <!-- Price -->
+    <div class="form-group">
+      <label for="price">Price ($)</label>
+      <input type="number" class="form-control" id="price" name="price" required placeholder="Enter price">
+    </div>
+
+    <!-- Rating (for Dogs) -->
+    <div class="form-group">
+      <label for="rating">Rating (only for Dogs, 0-10)</label>
+      <input type="number" class="form-control" id="rating" name="rating" min="0" max="10" placeholder="Enter dog rating">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add Pet</button>
+    <a href="/pets" class="btn btn-secondary">Back to Pets List</a>
+  </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
