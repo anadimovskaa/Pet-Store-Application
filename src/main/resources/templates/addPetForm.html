@@ -1,61 +1,49 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
-  <meta charset="UTF-8"/>
+  <meta charset="UTF-8">
   <title>Add Pet</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
 </head>
 <body>
-<div class="container">
-  <h1 class="my-4">Add a New Pet</h1>
-
-  <form th:action="@{/pets/add}" method="POST">
-    <!-- Pet Name -->
+<div class="container mt-5">
+  <h2 class="mb-4">Add New Pet</h2>
+  <form th:action="@{/pets/add}" method="post">
     <div class="form-group">
-      <label for="petName">Pet Name</label>
-      <input type="text" class="form-control" id="petName" name="petName" required placeholder="Enter pet name">
+      <label for="name">Pet Name</label>
+      <input type="text" class="form-control" id="name" name="name" placeholder="Enter pet name" required>
     </div>
 
-    <!-- Pet Type -->
     <div class="form-group">
-      <label for="petType">Pet Type</label>
-      <select class="form-control" id="petType" name="petType" required>
+      <label for="type">Pet Type</label>
+      <select class="form-control" id="type" name="type" required>
         <option value="DOG">Dog</option>
         <option value="CAT">Cat</option>
       </select>
     </div>
 
-    <!-- Description -->
     <div class="form-group">
-      <label for="description">Description</label>
-      <textarea class="form-control" id="description" name="description" required placeholder="Enter pet description"></textarea>
+      <label for="breed">Breed</label>
+      <input type="text" class="form-control" id="breed" name="breed" placeholder="Enter breed">
     </div>
 
-    <!-- Birth Date -->
     <div class="form-group">
       <label for="birthDate">Birth Date</label>
       <input type="date" class="form-control" id="birthDate" name="birthDate" required>
     </div>
 
-    <!-- Price -->
     <div class="form-group">
-      <label for="price">Price ($)</label>
-      <input type="number" class="form-control" id="price" name="price" required placeholder="Enter price">
+      <label for="price">Price (€)</label>
+      <input type="number" class="form-control" id="price" name="price" step="0.01" required>
     </div>
 
-    <!-- Rating (for Dogs) -->
-    <div class="form-group">
-      <label for="rating">Rating (only for Dogs, 0-10)</label>
-      <input type="number" class="form-control" id="rating" name="rating" min="0" max="10" placeholder="Enter dog rating">
-    </div>
 
     <button type="submit" class="btn btn-primary">Add Pet</button>
-    <a href="/pets" class="btn btn-secondary">Back to Pets List</a>
+    <a href="/" class="btn btn-secondary ml-2">Cancel</a>
   </form>
 </div>
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 import java.util.Random;
 
 @Service
@@ -82,6 +83,12 @@ public class UserServiceImpl implements UserService {
         }
 
         return true;
+    }
+
+    @Override
+    public User findById(Long ownerId) {
+        Optional<User> user = userRepository.findById(ownerId);
+        return user.orElse(null);
     }
 
 

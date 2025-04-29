@@ -8,4 +8,6 @@ public interface UserService {
     void createUsers();
     List<User> listUsers();
     boolean buyPet(Long userId, Long petId);
+
+    User findById(Long ownerId);
 }
